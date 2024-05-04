@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: bmark-backend
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017}
+      username: ${MONGO_USERNAME:root}
+      password: ${MONGO_PASSWORD:root}
+
+server:
+  port: ${PORT:9090}
