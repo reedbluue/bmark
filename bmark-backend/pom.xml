@@ -115,7 +115,10 @@
             <image>eclipse-temurin:21-jre-alpine</image>
           </from>
           <to>
-            <image>${project.artifactId}-${project.version}</image>
+            <image>${project.artifactId}</image>
+            <tags>
+              <tag>${project.version}</tag>
+            </tags>
           </to>
           <container>
             <ports>
