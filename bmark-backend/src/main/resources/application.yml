@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: bmark-backend
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://root:root@localhost:27017/bmark?authSource=admin}
+
+server:
+  port: ${PORT:9090}
+  error:
+    include-message: always
+    include-stacktrace: never
+    include-binding-errors: always
+
+springdoc:
+  swagger-ui:
+    path: /docs
+    display-operation-id: true
+    display-request-duration: true
+  api-docs:
+    path: /docs/json
