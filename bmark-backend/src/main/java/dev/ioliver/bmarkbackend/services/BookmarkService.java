@@ -43,7 +43,8 @@ public class BookmarkService {
   }
 
   @Transactional
-  public void delete(String id) {
-    bookmarkRepository.deleteById(id);
+  public void delete(String id) throws BadRequestException {
+    BookmarkResponse bookmarkResponse = findById(id);
+    bookmarkRepository.deleteById(bookmarkResponse.id());
   }
 }

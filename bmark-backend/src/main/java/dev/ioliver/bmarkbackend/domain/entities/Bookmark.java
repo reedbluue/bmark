@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collation = "bookmarks")
+@Document("bookmarks")
 public class Bookmark {
   private String id;
   private String url;
