@@ -12,5 +12,15 @@ public interface BookmarkRepository extends MongoRepository<Bookmark, String> {
   Optional<Bookmark> optionalById(String id);
 
   @Query("{'title': { $regex: ?0, $options: 'i' } }")
-  Page<Bookmark> filterAllByTitle(String title, Pageable pageable);
+  Page<Bookmark> filterALlByTitle(String title, Pageable pageable);
+
+  default Page<Bookmark> filterOrReturnAllByTitle(String title, Pageable pageable) {
+    if (title == null || title.isEmpty()) {
+      return findAll(pageable);
+    } else {
+      return filterALlByTitle(title, pageable);
+    }
+  }
+
+  boolean existsByTitleIgnoreCase(String title);
 }
