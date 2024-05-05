@@ -115,7 +115,7 @@
             <image>eclipse-temurin:21-jre-alpine</image>
           </from>
           <to>
-            <image>${project.artifactId}</image>
+            <image>reedbluue/${project.artifactId}</image>
             <tags>
               <tag>${project.version}</tag>
             </tags>
