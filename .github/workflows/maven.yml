@@ -31,4 +31,4 @@ jobs:
         run: |
           ./mvnw -B compile jib:dockerBuild -DSkipTests
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
-          docker push bmark-backend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/bmark-backend
