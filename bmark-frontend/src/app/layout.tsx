@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {PropsWithChildren} from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "BMark",
@@ -12,9 +13,12 @@ export default function RootLayout({children}: Readonly<PropsWithChildren>) {
   return (
       <html lang="en">
       <body>
-      <div className={"min-h-screen h-full w-full"}>
+      <div className={"min-h-screen h-full w-full flex flex-col"}>
         <Navbar/>
-        {children}
+        <div className={"flex-grow"}>
+          {children}
+        </div>
+        <Footer/>
       </div>
       </body>
       </html>
