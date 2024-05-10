@@ -27,7 +27,7 @@ export default function Navbar() {
           </div>
           <Link href={"/"} className="btn btn-ghost text-xl">BMark</Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-2">
             {links.map((link) => (
                 <li key={link.label}><Link href={link.url}>{link.label}</Link></li>
