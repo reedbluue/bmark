@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-bmark-frontend:
+    name: Build bmark-frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./bmark-frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - if: ${{ github.ref == 'refs/heads/main' }}
+        name: Build the Docker image
+        run: |
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/bmark-backend
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/bmark-backend
