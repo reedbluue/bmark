@@ -11,9 +11,18 @@ server:
     include-message: always
     include-stacktrace: never
     include-binding-errors: always
-
 springdoc:
   swagger-ui:
+    enabled: false
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+springdoc:
+  swagger-ui:
+    enabled: true
     path: /docs
     display-operation-id: true
     display-request-duration: true
