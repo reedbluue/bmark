@@ -3,7 +3,7 @@ spring:
     name: bmark-backend
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb://root:root@localhost:27017/bmark?authSource=admin}
+      uri: mongodb://${DB_USERNAME:root}:${DB_PASSWORD:root}@${DB_HOST:localhost}:${DB_PORT:27017}/${DB_DATABASE:bmark}?authSource=admin
 
 server:
   port: ${PORT:9090}
