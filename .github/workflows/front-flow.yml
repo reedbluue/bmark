@@ -19,6 +19,6 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Build the Docker image
         run: |
-          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/bmark-front
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/bmark-frontend
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/bmark-front
+          docker push ${{ secrets.DOCKER_USERNAME }}/bmark-frontend
